@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-primary" (click)="goTo('create')">Agregar Usuario</button>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>        {{user.email}}</td>
+              <td>{{user.username}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {UsersModule} from './modules/users/users.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    UsersModule,
+    RouterModule.forRoot([
+      { path: 'welcome', component: AppComponent }
+    ], {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
