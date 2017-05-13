@@ -24,7 +24,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   createUser(newUser) {
-    console.info('Llamando sErvicio');
+    console.log('Llamando sErvicio');
     this.UsersService.createUser(newUser)
       .subscribe(user => this.user = user,
         error => console.log(error));

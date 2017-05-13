@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {UsersModule} from './modules/users/users.module';
 import {RouterModule} from '@angular/router';
+import {SeriesModule} from './modules/series/series.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import {RouterModule} from '@angular/router';
     FormsModule,
     HttpModule,
     UsersModule,
+    SeriesModule,
     RouterModule.forRoot([
       { path: 'welcome', component: AppComponent }
-    ], {useHash: true})
+    ], {useHash: false})
   ],
   providers: [],
   bootstrap: [AppComponent]
