@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-primary" (click)="goTo('create')">Agregar Manga</button>
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Tomo</th>
+          <th>Precio</th>
+          <th>ISBN</th>
+          <th>Fecha publicación</th>
+          <th>Serie</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let manga of mangas">
+          <td>{{manga.title}}</td>
+          <td>{{manga.volume}}</td>
+          <td>{{manga.price}}</td>
+          <td>{{manga.isbn}}</td>
+          <td>{{manga.publishedAt}}</td>
+          <td>{{manga.series.name}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <pre>{{ mangas | json }} </pre>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<form (submit)="validateMangaCreateForm()">
+  <div class="form-group">
+    <label for="title">Titulo</label>
+    <input type="text" class="form-control" name="title" id="title" [(ngModel)]="manga.title">
+  </div>
+  <div class="form-group">
+    <label for="volume">Tomo</label>
+    <input type="text" class="form-control" name="volume" id="volume" [(ngModel)]="manga.volume">
+  </div>
+  <div class="form-group">
+    <label for="price">Precio</label>
+    <input type="text" class="form-control" name="price" id="price" [(ngModel)]="manga.price">
+  </div>
+  <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input type="text" class="form-control" name="isbn" id="isbn" [(ngModel)]="manga.isbn">
+  </div>
+  <div class="form-group">
+    <label for="publishedAt">Fecha publicación</label>
+    <input type="text" class="form-control" name="publishedAt" id="publishedAt" [(ngModel)]="manga.publishedAt">
+  </div>
+  <div class="form-group">
+    <label for="serie">Serie</label>
+    <select name="serie" id="serie" [(ngModel)]="manga.serie_id">
+      <option value="">-- Selecciona una serie --</option>
+      <option *ngFor="let serie of series"
+              [ngValue]="serie.id"
+      >{{ serie.name }}</option>
+    </select>
+  </div>
+
+  {{ manga | json}}
+  <button type="submit" class="btn btn-primary">Crear</button>
+</form>
