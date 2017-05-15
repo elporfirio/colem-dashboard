@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {UsersModule} from './modules/users/users.module';
 import {RouterModule} from '@angular/router';
 import {SeriesModule} from './modules/series/series.module';
+import {MangasModule} from './modules/mangas/mangas.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {SeriesModule} from './modules/series/series.module';
     HttpModule,
     UsersModule,
     SeriesModule,
+    MangasModule,
     RouterModule.forRoot([
       { path: 'welcome', component: AppComponent }
     ], {useHash: false})
