@@ -20,11 +20,17 @@ export class CreateMangaComponent implements OnInit {
   };
 
   private series: Serie[];
+  private image: any;
 
   constructor(private MangasService: MangasService, private SeriesService: SeriesService) { }
 
   ngOnInit() {
     this.getSeries();
+    this.image = null;
+  }
+
+  deleteImage() {
+    this.image = null;
   }
 
   getSeries(){
@@ -34,8 +40,16 @@ export class CreateMangaComponent implements OnInit {
   }
 
   validateMangaCreateForm() {
-    console.log('Creando Serie');
-    this.createManga(this.manga);
+    console.log('Creando Manga');
+    const self = this;
+    const formData = new FormData();
+    for (let key in self.manga) {
+      if(self.manga[key] !== undefined){
+        formData.append(key, self.manga[key]);
+      }
+    }
+    formData.append('imageFile', self.image.file, self.image.name);
+    this.createManga(formData);
   }
 
   createManga(newManga) {

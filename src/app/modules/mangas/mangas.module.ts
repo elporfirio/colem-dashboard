@@ -6,11 +6,13 @@ import { ListMangasComponent } from './list-mangas/list-mangas.component';
 import { CreateMangaComponent } from './create-manga/create-manga.component';
 import {MangasService} from './mangas.service';
 import {SeriesService} from '../series/series.service';
+import {ImageUploaderModule} from '../../common/image-uploader/image-uploader.module';
 
 @NgModule({
   imports: [
     FormsModule,
     CommonModule,
+    ImageUploaderModule,
     RouterModule.forChild([
       {path: 'mangas/create', component: CreateMangaComponent},
       {path: 'mangas', component: ListMangasComponent}

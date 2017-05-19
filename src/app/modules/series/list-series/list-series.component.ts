@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Serie} from '../serie';
 import {SeriesService} from '../series.service';
 import {Router} from '@angular/router';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-list-series',
@@ -11,8 +12,10 @@ import {Router} from '@angular/router';
 
 export class ListSeriesComponent implements OnInit {
   private series: Serie[];
+  private endPoint: string;
 
   constructor(private SeriesService: SeriesService, private router: Router) {
+    this.endPoint = environment.host + environment.api;
   }
 
   ngOnInit() {

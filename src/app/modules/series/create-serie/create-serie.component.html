@@ -1,3 +1,12 @@
+<app-image-uploader [(image)]="image" *ngIf="image === null"></app-image-uploader>
+<button type="button" class="btn btn-danger" (click)="deleteImage()">DELETE</button>
+<img [src]="image?.source" *ngIf="image !== null">
+
+
+<h3>Background Div</h3>
+<div [ngStyle]="{'background-image':'url('+ image?.source +')'}" style="background-size: cover; width: 200px; height: 200px"></div>
+
+
 <form (submit)="validateSerieCreateForm()">
   <div class="form-group">
     <label for="name">Name</label>

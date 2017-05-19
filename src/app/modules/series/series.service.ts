@@ -6,13 +6,15 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import {environment} from '../../../environments/environment';
 
 @Injectable()
 export class SeriesService {
 
-  private _url = 'http://colem.api/api/v1';
+  private _url: string;
 
   constructor(private http: Http) {
+    this._url = environment.host + environment.api;
   }
 
   createSerie(serie: Serie): Observable<Serie> {

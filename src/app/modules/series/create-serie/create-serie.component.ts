@@ -14,15 +14,31 @@ export class CreateSerieComponent implements OnInit {
     editorial: ''
   };
 
+  image: any = null;
+
   constructor(private SeriesService: SeriesService) {
   }
 
   ngOnInit() {
   }
 
+  deleteImage() {
+    this.image = null;
+  }
+
   validateSerieCreateForm() {
     console.log('Creando Serie');
-    this.createSerie(this.serie);
+    const self = this;
+    const formData = new FormData();
+    for (let key in self.serie) {
+      if(self.serie[key] !== undefined){
+        formData.append(key, self.serie[key]);
+      }
+    }
+    //formData.append('_csrf',)
+    formData.append('imageFile', self.image.file, self.image.name);
+
+    this.createSerie(formData);
   }
 
   createSerie(newSerie) {

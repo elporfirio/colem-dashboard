@@ -6,6 +6,7 @@
       <table class="table">
         <thead>
         <tr>
+          <th>--</th>
           <th>Titulo</th>
           <th>Tomo</th>
           <th>Precio</th>
@@ -16,6 +17,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let manga of mangas">
+          <td><img src="{{endPoint}}/images/covers/{{manga.cover}}" width="100"></td>
           <td>{{manga.title}}</td>
           <td>{{manga.volume}}</td>
           <td>{{manga.price}}</td>
